@@ -83,7 +83,7 @@ body {
 /* Style the home-image to be on the right */
 .home-image {
     order: 500; /* This moves the image to the right */
-    margin-left: 700px; /* Optional, space between text and image */
+    margin-left: 200px; /* Optional, space between text and image */
     
     
 }
