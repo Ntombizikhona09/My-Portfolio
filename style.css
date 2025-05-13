@@ -12,46 +12,29 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.header{
+.header {
     position: fixed;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 100%;
     padding: 20px 10%;
     background: grey;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center everything inside the header */
     align-items: center;
     z-index: 100;
 }
 
-.menu-toggle{
- color: black;
+.menu-toggle {
+    color: black;
     font-size: 15px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px 10px;   
+    justify-content: center;
+    padding: 15px 10px;
 }
 
-.logo{
-    position: relative;
-    font-size: 25px;
-    color: black;
-    text-decoration: none;
-    font-weight: 600;
-}
 
-.logo::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    background: goldenrod;
-    animation: show Right 1s ease forwards;
-    animation-delay: .4s;
-}
 
 
 .navbar a{
@@ -531,25 +514,36 @@ html, body {
 
 .certificate-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Increased from 250px */
+    gap: 30px;
     justify-content: center;
-    align-items: center;
+    align-items: start;
+    padding: 2% 5%;
 }
+
 
 /* Certificate Image Styling with Hover Effect */
 .certificate-gallery img {
     width: 100%;
-    max-width: 300px;
+    max-width: none; /* Remove the 300px limit */
+    height: auto;
+    object-fit: contain; /* Ensure images are not cropped */
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+
+.certificate-container {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
 .certificate-gallery img:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
+
 
 
 /* Centering the contact container */
@@ -743,4 +737,96 @@ body {
     color: #333;  /* Default icon color */
     text-decoration: none;  /* Remove the underline */
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;  /* Smooth transition */
+}
+
+/* Base adjustments for all pages */
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive rules for all pages EXCEPT the Home page */
+.page-other {
+    /* Tablets and smaller desktops */
+    @media (max-width: 1024px) {
+        .header {
+            padding: 5% 5%;
+        }
+
+        .bth-box {
+            position: static;
+            flex-direction: column;
+            align-items: center;
+            margin: 5% auto;
+            width: 100%;
+        }
+    }
+
+    /* Mobile screens */
+    @media (max-width: 768px) {
+        .navbar a {
+            margin-left: 5%;
+            font-size: 4vw;
+        }
+
+        .home-content h1 {
+            font-size: 6vw;
+        }
+
+        .home-content p,
+        .about-me-content {
+            font-size: 3.5vw;
+        }
+
+        .skills-container {
+            flex-direction: column;
+            gap: 3%;
+            height: auto;
+        }
+
+        .skill-img {
+            width: 20%;
+            height: auto;
+        }
+
+        .Projects h1 {
+            font-size: 5vw;
+            margin-top: 2%;
+        }
+
+        .mywork-info p {
+            font-size: 3.5vw;
+            text-align: center;
+            margin: 3% auto;
+        }
+
+        .project {
+            width: 90%;
+        }
+    }
+
+    /* Small phones */
+    @media (max-width: 480px) {
+        .home-content h1 {
+            font-size: 7vw;
+        }
+
+        .home-content h2 {
+            font-size: 5vw;
+        }
+
+        .project-button {
+            font-size: 3.5vw;
+            padding: 2vw 4vw;
+        }
+
+        .footer {
+            font-size: 3.5vw;
+        }
+    }
 }
