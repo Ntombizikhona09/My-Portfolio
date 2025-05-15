@@ -762,83 +762,119 @@ img {
     height: auto;
 }
 
-/* Responsive rules for all pages EXCEPT the Home page */
-.page-other {
-    /* Tablets and smaller desktops */
-    @media (max-width: 1024px) {
-        .header {
-            padding: 5% 5%;
-        }
+/* Base responsive fixes */
+body, html {
+    width: 100%;
+    overflow-x: hidden;
+}
 
-        .bth-box {
-            position: static;
-            flex-direction: column;
-            align-items: center;
-            margin: 5% auto;
-            width: 100%;
-        }
+/* Adjust header padding and font for small screens */
+@media (max-width: 1024px) {
+    .header {
+        padding: 15px 5%;
+        flex-direction: column;
     }
 
-    /* Mobile screens */
-    @media (max-width: 768px) {
-        .navbar a {
-            margin-left: 5%;
-            font-size: 4vw;
-        }
-
-        .home-content h1 {
-            font-size: 6vw;
-        }
-
-        .home-content p,
-        .about-me-content {
-            font-size: 3.5vw;
-        }
-
-        .skills-container {
-            flex-direction: column;
-            gap: 3%;
-            height: auto;
-        }
-
-        .skill-img {
-            width: 20%;
-            height: auto;
-        }
-
-        .Projects h1 {
-            font-size: 5vw;
-            margin-top: 2%;
-        }
-
-        .mywork-info p {
-            font-size: 3.5vw;
-            text-align: center;
-            margin: 3% auto;
-        }
-
-        .project {
-            width: 90%;
-        }
+    .navbar a {
+        font-size: 16px;
+        margin-left: 20px;
     }
 
-    /* Small phones */
-    @media (max-width: 480px) {
-        .home-content h1 {
-            font-size: 7vw;
-        }
+    .home {
+        flex-direction: column;
+        padding: 0 5%;
+        text-align: center;
+    }
 
-        .home-content h2 {
-            font-size: 5vw;
-        }
+    .home-content {
+        margin: 0;
+        max-width: 100%;
+    }
 
-        .project-button {
-            font-size: 3.5vw;
-            padding: 2vw 4vw;
-        }
+    .home-content h1 {
+        font-size: 40px;
+    }
 
-        .footer {
-            font-size: 3.5vw;
-        }
+    .home-content p {
+        font-size: 14px;
+    }
+
+    .home-image {
+        margin-left: 0;
+        margin-top: 20px;
+        order: 2;
+    }
+
+    .home-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .btn-box, .bth-box {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .btn-box a, .bth-box a {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .home-sci {
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+    }
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 600px) {
+    .home-content h1 {
+        font-size: 30px;
+    }
+
+    .home-content p {
+        font-size: 13px;
+    }
+
+    .about-me-content {
+        font-size: 13px;
+        padding: 0 10px;
+    }
+
+    .Full-stack h2, .Full-stack p {
+        font-size: 14px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .Projects h1 {
+        font-size: 24px;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .mywork-info p {
+        font-size: 14px;
+        margin: 10px;
+    }
+
+    .project {
+        width: 90%;
+    }
+
+    .skill-img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Fix footer stacking */
+@media (max-width: 480px) {
+    .footer {
+        font-size: 14px;
+        padding: 10px 5px;
     }
 }
