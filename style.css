@@ -33,6 +33,16 @@ body {
     justify-content: center;
     padding: 15px 10px;
 }
+  /* Show hamburger on small screens */
+    @media (max-width: 768px) {
+      .navbar a {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
 
 
 
@@ -70,6 +80,7 @@ body {
     
     
 }
+
 
 /* Ensure that the image is sized correctly */
 .home-image img {

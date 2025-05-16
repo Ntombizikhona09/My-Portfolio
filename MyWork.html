@@ -59,6 +59,25 @@
         <p>&copy; <span id="year"></span>Ntombizikhona Qandashe</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+
+    // Small JS to toggle menu for the hamburger (if you want zero JS, remove this and menu toggle won't work)
+    // Since you said no JS, you can comment this out or delete.
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.querySelector('.navbar');
+
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+      });
+      // Allow keyboard toggling for accessibility
+      menuToggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          navbar.classList.toggle('active');
+        }
+      });
+    }
+  </script>
 </body>
 </html>
