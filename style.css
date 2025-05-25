@@ -889,3 +889,27 @@ body, html {
         padding: 10px 5px;
     }
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    .home-content, .home-image {
+        margin: 0 auto;
+    }
+
+    .bth-box, .home-sci {
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .project {
+        width: 45%;
+    }
+}
