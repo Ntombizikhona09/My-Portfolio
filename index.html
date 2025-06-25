@@ -3,77 +3,267 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ntombizikhona Qandashe | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+    /* Enable smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 
 <body>
-  <header class="header">
+  <header class="header sticky">
     <nav class="navbar d-flex align-items-center">
       <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0">
         <span></span>
         <span></span>
         <span></span>
       </div>
-      <a href="index.html">HOME</a>
-      <a href="About.html">ABOUT</a>
-      <a href="Skills.html">SKILLS</a>
-      <a href="MyWork.html">MY WORK</a>
-      <a href="Certificate.html">CERTIFICATES</a>
-      <a href="Contact.html">CONTACT</a>
+      <a href="#home" class="nav-link">HOME</a>
+      <a href="#about" class="nav-link">ABOUT</a>
+      <a href="#skills" class="nav-link">SKILLS</a>
+      <a href="#projects" class="nav-link">MY WORK</a>
+      <a href="#certificates" class="nav-link">CERTIFICATES</a>
+      <a href="#contact" class="nav-link">CONTACT</a>
+      <button id="theme-toggle" aria-label="Toggle dark mode" class="btn btn-sm ms-auto">
+  <i class='bx bx-moon'></i>
+</button>
+
     </nav>
   </header>
 
-  <section class="home" id="home_section">
+  <!-- Home Section -->
+  <section class="home fade-in-section" id="home">
     <div class="home-content d-flex flex-wrap align-items-center">
       <div id="home-text" style="flex:1; min-width: 250px;">
         <h1>Hello!</h1>
         <h2>I'm Ntombizikhona Qandashe</h2>
         <p>Transforming Ideas Into Beautiful, User-Friendly Websites That Drive Success.</p>
         <div class="btn-box">
-          <a href="Contact.html" class="btn btn-primary mt-3">CONTACT ME</a>
+          <a href="#contact" class="btn btn-primary mt-3">CONTACT ME</a>
         </div>
       </div>
+      <div class="fixed-image">
       <div class="home-image" style="flex:1; min-width: 250px; text-align: center;">
         <img src="myself.png" alt="Ntombizikhona Qandashe" style="max-width: 300px; margin-top: 20px;" />
+      </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer text-center mt-5 py-3">
-    <p>&copy; 2025 Ntombizikhona Qandashe</p>
-  </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  <!-- About Section -->
+  <section class="about fade-in-section" id="about">
+    <div class="About-me">
+      <h1>About Me</h1>
+    </div>
+    <div class="about-me-content">
+      <p>Hi there! I’m Ntombizikhona Qandashe, a passionate Web Developer with a knack for turning ideas into reality. With a background in Software Development and six months of hands-on experience, I combine design and technology to create user-friendly, impactful websites. I’m always learning and exploring new techniques to push the boundaries of my craft. Whether it’s coding, design, or writing, I focus on delivering high-quality work that meets both client goals and user needs. Collaboration is key for me—I work closely with clients to bring their vision to life with creativity, attention to detail, and innovation. When I’m not coding, you’ll find me experimenting with new tech, exploring new places, or reading to fuel my creativity. Take a look at my portfolio, and let’s connect if you’d like to collaborate or chat!</p>
+    </div>
+  </section>
 
-    // Small JS to toggle menu for the hamburger (if you want zero JS, remove this and menu toggle won't work)
-    // Since you said no JS, you can comment this out or delete.
-    const menuToggle = document.getElementById('menu-toggle');
-    const navbar = document.querySelector('.navbar');
+  <!-- Skills Section -->
+  <section class="skills fade-in-section" id="skills">
+    <div class="Full-stack">
+      <h2>My Skills</h2>
+      <p>I have experience in HTML, CSS, JavaScript, Node.js, React basics and more. I am always looking for new opportunities to learn and grow.</p>
+    </div>
+   <div class="skills-container">
+  <a href="https://www.w3schools.com/html/" target="_blank">
+    <img src="html.png" alt="HTML" class="skill-img">
+  </a>
+  <a href="https://www.w3schools.com/css/" target="_blank">
+    <img src="css.png" alt="CSS" class="skill-img">
+  </a>
+  <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">
+    <img src="JavaScript.png" alt="JavaScript" class="skill-img">
+  </a>
+  <a href="https://en.wikipedia.org/wiki/Node.js" target="_blank">
+    <img src="node.png" alt="Node.js" class="skill-img">
+  </a>
+  <a href="https://en.wikipedia.org/wiki/React_(software)" target="_blank">
+    <img src="react.png" alt="React" class="skill-img">
+  </a>
+  <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+    <img src="Python.png" alt="Python" class="skill-img">
+  </a>
+  <a href="https://en.wikipedia.org/wiki/Machine_learning" target="_blank">
+    <img src="machinelearning.png" alt="Machine Learning" class="skill-img">
+  </a>
+</div>
+
+  </section>
+
+ <!-- Projects Section -->
+<section class="mywork fade-in-section" id="projects">
+  <div class="Projects">
+    <h1>My Work</h1>
+  </div>
+
+  <div class="mywork-projects">
+    <a href="https://ntombizikhona09.github.io/my-todo-list/" target="_blank">
+      <img src="Todo.png" alt="To-Do List Project" class="project-img">
+    </a>
+    <a href="https://ntombizikhona09.github.io/medbook/" target="_blank">
+      <img src="medbook.png" alt="MedBook Project" class="project-img">
+    </a>
+    <a href="https://6840362e250bce7b062da362--astonishing-babka-768f8f.netlify.app/" target="_blank">
+      <img src="chatbot.png" alt="Chatbot Project" class="project-img">
+    </a>
+    <a href="https://famous-concha-16fc3d.netlify.app" target="_blank">
+      <img src="swift.png" alt="Swift-Desk Project" class="project-img">
+    </a>
+  </div>
+
+  <!-- GitHub Button Below -->
+  <div class="github-button-container" style="margin-top: 30px;">
+    <a href="https://github.com/ntombizikhona09" target="_blank">
+      <button class="github-btn">View My GitHub Code</button>
+    </a>
+  </div>
+</section>
+
+
+  </section>
+
+  <!-- Certificates Section -->
+  <section class="skills fade-in-section" id="certificates">
+    <div class="container">
+      <h1 class="section-title">Certificates</h1>
+      <div class="row">
+        <div class="col-md-6">
+         
+          <div class="certificate-gallery">
+            <img src="node.js CertificateNOQandashe.png" alt="Node.js Certificate" class="skill-img">
+            <img src="webApplication NQandashe.png" alt="Web Application Certificate" class="skill-img">
+            <img src="CapacitWebCertificate.png" alt="Capaciti Web Certificate" class="skill-img">
+            <img src="NQandashe React cert.png" alt="React Certificate" class="skill-img">
+          </div>
+        </div>
+        <div class="col-md-6">
+          
+          <div class="certificate-gallery">
+            <img src="WorkSmart.jpg" alt="Work Smart Cert" class="skill-img">
+            <img src="DevelopingInterpersonal.png" alt="Develop skills cert" class="skill-img">
+            <img src="WriteProff.png" alt="Write Prof cert" class="skill-img">
+            <img src="verbalcomm.png" alt="Verbal comm Cert" class="skill-img">
+          </div>
+        </div>
+      </div>
+      <div class="view-more">
+        <a href="https://github.com/Ntombizikhona09/My-Portfolio/tree/main/certificates" target="_blank" class="btn btn-primary">View More Certificates</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact fade-in-section" id="contact">
+    <div class="contact-container">
+      <h2>Connect with Me</h2>
+      <form action="https://formsubmit.co/qandasheombesiwe13@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <input type="hidden" name="_next" value="https://your-website.com/thank-you.html" />
+        <input type="hidden" name="_subject" value="New message from Connect Form" />
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="social-links">
+        <h3>Connect with Me</h3>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/ntombizikhona-qandashe-33a9972b1/?originalSubdomain=za" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+          <li><a href="https://github.com/ntombizikhona09" target="_blank"><i class='bx bxl-github'></i></a></li>
+          <li><a href="mailto:qandasheombesiwe13@gmail.com"><i class='bx bxs-envelope'></i></a></li>
+          <li><a href="Ntombizikhona_QandasheCV.pdf" download><i class='bx bxs-file-pdf'></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center mt-5 py-3">
+    <p>&copy; <span id="year"></span> Ntombizikhona Qandashe</p>
+  </footer>
+
+  <script>
+    // Set current year
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+    // Menu toggle for mobile
+    const menuToggle = document.getElementById("menu-toggle");
+    const navbar = document.querySelector(".navbar");
 
     if (menuToggle) {
-      menuToggle.addEventListener('click', () => {
-        navbar.classList.toggle('active');
+      menuToggle.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+        menuToggle.classList.toggle("active"); // Added this line to animate hamburger
       });
-      // Allow keyboard toggling for accessibility
-      menuToggle.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
+      menuToggle.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
-          navbar.classList.toggle('active');
+          navbar.classList.toggle("active");
+          menuToggle.classList.toggle("active"); // Also toggle animation on keyboard toggle
         }
       });
     }
+
+    // Scroll animation: fade in sections when visible
+    const faders = document.querySelectorAll('.fade-in-section');
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          entry.target.classList.add('appear');
+          appearOnScroll.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    // Dark mode toggle
+const toggleBtn = document.getElementById('theme-toggle');
+const body = document.body;
+
+const setTheme = (theme) => {
+  body.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  toggleBtn.innerHTML = theme === 'dark' ? "<i class='bx bx-sun'></i>" : "<i class='bx bx-moon'></i>";
+};
+
+// Check saved theme
+const savedTheme = localStorage.getItem('theme') || 'light';
+setTheme(savedTheme);
+
+toggleBtn.addEventListener('click', () => {
+  const currentTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  setTheme(currentTheme);
+});
+
   </script>
+
 </body>
-
-</html>
-  
-</body>
-<!-- On pages other than Home -->
-<body class="page-other">
-
-
 
 </html>
