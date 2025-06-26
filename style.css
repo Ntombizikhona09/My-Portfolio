@@ -18,6 +18,23 @@
   --nav-bg: #1f1f1f;
   --section-bg: rgba(30, 30, 30, 0.9);
 }
+#theme-toggle {
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  margin-left: auto;
+  cursor: pointer;
+}
+/* Position the moon button */
+.theme-btn {
+  background: none;
+  border: none;
+  font-size: 30px; /* Bigger icon */
+  color: black;
+  cursor: pointer;
+  margin-left: auto;
+}
 
 * {
     margin: 0;
@@ -25,34 +42,25 @@
     box-sizing: border-box;
     font-family: 'poppins', sans-serif;
 }
-
 body {
-    background: var(--section-bg);
-    color: var(--text-color);
-
-    background-image: url('bg.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    transition: background-color 0.3s, color 0.3s;
+  background-color: var(--section-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 
-/* Fixed header */
+
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 10%;
-    background: grey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: background-color 0.3s ease, padding 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--nav-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10%;
+  z-index: 1000;
 }
 
 /* Sticky effect with smaller padding on scroll (optional) */
@@ -66,17 +74,18 @@ body > section,
 body > .home {
     padding-top: 90px; /* Space equal or bigger than header height */
 }
+#rotating-text {
+  color: black;
+  font-weight: 700;
+}
+
 
 /* Navbar */
 .menu-toggle {
     color: black;
     font-size: 15px;
     display: none; /* hide on desktop by default */
-    align-items: center;
-    justify-content: center;
-    padding: 15px 10px;
     cursor: pointer;
-    user-select: none;
     flex-direction: column;
     gap: 6px;
 }
@@ -100,6 +109,13 @@ body > .home {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* Navbar default for desktop */
+.navbar {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
 .navbar a {
     font-size: 18px;
     color: black;
@@ -114,21 +130,6 @@ body > .home {
     color: goldenrod;
 }
 
-/* Show hamburger on small screens */
-@media (max-width: 768px) {
-    .navbar a {
-        display: none;
-    }
-
-    .navbar.active a {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-}
 
 /* Fade-in section animation */
 .fade-in-section {
@@ -143,7 +144,6 @@ body > .home {
     transform: translateY(0);
 }
 
-/* Home Section */
 .home {
   display: flex;
   flex-direction: row;
@@ -154,7 +154,9 @@ body > .home {
   gap: 40px;
   flex-wrap: wrap;
   background: transparent;
+  margin-top: 100px; /* ✅ Add this to push below fixed header */
 }
+
 
 .home-content {
   flex: 1 1 500px;
@@ -211,15 +213,21 @@ body > .home {
 .home-image {
   flex: 1 1 300px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 30px;
 }
 
 .home-image img {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
+
+
 
 .home-image img:hover {
   transform: scale(1.03);
@@ -381,7 +389,7 @@ body > .home {
 
 
 /* Certificates Section */
-.skills#certificates {
+.certificates {
     padding: 5% 10%;
     background: var(--section-bg);
     color: var(--text-color);
@@ -499,47 +507,12 @@ body > .home {
     margin-top: 40px;
 }
 
-/* Responsive tweaks */
-
-/* Smaller devices */
-@media (max-width: 768px) {
-    .home {
-        flex-direction: column;
-        padding: 20px 5%;
-    }
-
-    .home-content, .home-image {
-        margin: 0 auto 20px;
-        max-width: 100%;
-        flex: none;
-    }
-
-    .btn-box {
-        flex-direction: column;
-        width: 100%;
-        gap: 15px;
-    }
-
-    .btn-box a {
-        width: 100%;
-        margin: 0;
-    }
-
-    .about, .skills, .mywork, .contact, .skills#certificates {
-        padding: 30px 5%;
-    }
-
-    .skill-img {
-        width: 80px;
-        height: 80px;
-    }
-}
 
 /* Very small screens */
-@media (max-width: 480px) {
-    .home-content h1 {
-        font-size: 32px;
-    }
+@media (max-width: 768px) {
+  .home-image {
+    display: none;
+  }
 
     .home-content p {
         font-size: 14px;
@@ -551,15 +524,35 @@ body > .home {
         width: 100%;
     }
 }
-.btn-box a, .github-btn, .contact-container form button {
+.btn-box a,
+.github-btn,
+.contact-container form button {
   background-color: var(--btn-bg);
   color: var(--btn-text);
+  padding: 12px 24px;
+  border: 2px solid var(--btn-bg);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.btn-box a:hover, .github-btn:hover, .contact-container form button:hover {
+/* Hover effect */
+.btn-box a:hover,
+.github-btn:hover,
+.contact-container form button:hover {
   background-color: var(--btn-text);
   color: var(--btn-bg);
+  border-color: var(--btn-text);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
+
 .fixed-image {
   position: fixed;
   right: 50px; /* Distance from the right edge */
@@ -570,4 +563,91 @@ body > .home {
 .fixed-image img {
   max-width: 300px;  /* Adjust as needed */
   height: auto;
+}
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    padding: 30px 5%;
+    text-align: center;
+  }
+
+ 
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+    .navbar {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: var(--nav-bg);
+    z-index: 999;
+    padding: 10px 0;
+  }
+
+  .navbar.active {
+    display: flex; /* show nav links only when toggled */
+  }
+
+  .navbar a {
+    margin: 10px 0;
+    color: black;
+     text-decoration: none;
+  }
+
+  .home {
+    flex-direction: column;
+    padding: 30px 5%;
+    text-align: center;
+  }
+
+  .home-image {
+    display: none; /* ✅ Hide image on mobile */
+  }
+}
+
+
+  .home-image img {
+    max-width: 100%;
+  }
+    .btn-box {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-box a {
+        width: 100%;
+    }
+
+    .about, .skills, .mywork, .contact, .skills .certificates {
+        padding: 30px 5%;
+    }
+
+    .skill-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .fixed-image {
+        position: static;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+    }
+
+    .fixed-image img {
+        max-width: 100%;
+        height: auto;
+    }
 }
